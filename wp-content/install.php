@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WordPress custom install script.
  *
@@ -7,19 +8,20 @@
  *
  */
 
-function wp_install_defaults( $user_id ) {
+function wp_install_defaults($user_id)
+{
     global $wpdb, $wp_rewrite, $table_prefix;
 
     // Default category - rename it to General instead of Uncategorized
     $cat_name = __('General');
     /* translators: Default category slug */
-    $cat_slug = sanitize_title( _x( 'General', 'Default category slug' ) );
+    $cat_slug = sanitize_title(_x('General', 'Default category slug'));
 
 
-    if ( global_terms_enabled() ) {
-        $cat_id = $wpdb->get_var( $wpdb->prepare( "SELECT cat_ID FROM {$wpdb->sitecategories} WHERE category_nicename = %s", $cat_slug ) );
-        if ( $cat_id == null ) {
-            $wpdb->insert( $wpdb->sitecategories, array('cat_ID' => 0, 'cat_name' => $cat_name, 'category_nicename' => $cat_slug, 'last_updated' => current_time('mysql', true)) );
+    if (global_terms_enabled()) {
+        $cat_id = $wpdb->get_var($wpdb->prepare("SELECT cat_ID FROM {$wpdb->sitecategories} WHERE category_nicename = %s", $cat_slug));
+        if ($cat_id == null) {
+            $wpdb->insert($wpdb->sitecategories, array('cat_ID' => 0, 'cat_name' => $cat_name, 'category_nicename' => $cat_slug, 'last_updated' => current_time('mysql', true)));
             $cat_id = $wpdb->insert_id;
         }
         update_option('default_category', $cat_id);
@@ -27,13 +29,13 @@ function wp_install_defaults( $user_id ) {
         $cat_id = 1;
     }
 
-    $wpdb->insert( $wpdb->terms, array('term_id' => $cat_id, 'name' => $cat_name, 'slug' => $cat_slug, 'term_group' => 0) );
-    $wpdb->insert( $wpdb->term_taxonomy, array('term_id' => $cat_id, 'taxonomy' => 'category', 'description' => '', 'parent' => 0, 'count' => 1));
+    $wpdb->insert($wpdb->terms, array('term_id' => $cat_id, 'name' => $cat_name, 'slug' => $cat_slug, 'term_group' => 0));
+    $wpdb->insert($wpdb->term_taxonomy, array('term_id' => $cat_id, 'taxonomy' => 'category', 'description' => '', 'parent' => 0, 'count' => 1));
     $cat_tt_id = $wpdb->insert_id;
 
     // First post  -  REMOVED
-    $now = current_time( 'mysql' );
-    $now_gmt = current_time( 'mysql', 1 );
+    $now = current_time('mysql');
+    $now_gmt = current_time('mysql', 1);
     //    $first_post_guid = get_option( 'home' ) . '/?p=1';
     //
     //    if ( is_multisite() ) {
@@ -99,22 +101,22 @@ function wp_install_defaults( $user_id ) {
     //    ));
 
     // First Page - Add a blank homepage
-    if ( is_multisite() )
-        $first_page = get_site_option( 'first_page' );
+    if (is_multisite())
+        $first_page = get_site_option('first_page');
 
-    $first_page = ! empty( $first_page ) ? $first_page : sprintf( __( "" ), admin_url() );
+    $first_page = !empty($first_page) ? $first_page : sprintf(__(""), admin_url());
 
     $first_post_guid = get_option('home') . '/?page_id=1';
-    $wpdb->insert( $wpdb->posts, array(
+    $wpdb->insert($wpdb->posts, array(
         'post_author' => $user_id,
         'post_date' => $now,
         'post_date_gmt' => $now_gmt,
         'post_content' => $first_page,
         'post_excerpt' => '',
         'comment_status' => 'closed',
-        'post_title' => __( 'Home' ),
+        'post_title' => __('Home'),
         /* translators: Default page slug */
-        'post_name' => __( 'Home' ),
+        'post_name' => __('Home'),
         'post_modified' => $now,
         'post_modified_gmt' => $now_gmt,
         'guid' => $first_post_guid,
@@ -123,7 +125,7 @@ function wp_install_defaults( $user_id ) {
         'pinged' => '',
         'post_content_filtered' => ''
     ));
-    $wpdb->insert( $wpdb->postmeta, array( 'post_id' => 1, 'meta_key' => '_wp_page_template', 'meta_value' => 'default' ) );
+    $wpdb->insert($wpdb->postmeta, array('post_id' => 1, 'meta_key' => '_wp_page_template', 'meta_value' => 'default'));
 
     // Set up default widgets for default theme.  -  REMOVE (todo: Add footer widgets)
     //    update_option( 'widget_search', array ( 2 => array ( 'title' => '' ), '_multiwidget' => 1 ) );
@@ -159,37 +161,37 @@ function wp_install_defaults( $user_id ) {
     // Custom Options
 
     /** Set the tagline to nothing */
-    update_option( 'blogdescription', '' );
+    update_option('blogdescription', '');
 
 
     /** Allow people to post comments on new articles (this setting may be overridden for individual articles): false */
-    update_option( 'default_comment_status', 'closed' );
+    update_option('default_comment_status', 'closed');
 
 
     /** Disable Pingbacks */
-    update_option( 'default_ping_status', 'closed' );
-    update_option( 'default_pingback_flag ', 0 );
+    update_option('default_ping_status', 'closed');
+    update_option('default_pingback_flag ', 0);
 
 
     /** Media - Don't Organize Uploads by Date */
-    update_option('uploads_use_yearmonth_folders',0);
+    update_option('uploads_use_yearmonth_folders', 0);
 
 
     /** Media - Set all defaults to 0 to prevent multiple images being created.  */
-    update_option( 'thumbnail_size_w', 0 ); // Default: 150
-    update_option( 'thumbnail_size_h', 0 ); // Default: 150
-    update_option( 'medium_size_w', 0 ); // Default: 300
-    update_option( 'medium_size_h', 0 ); // Default: 300
-    update_option( 'large_size_w', 0 ); // Default: 1024
-    update_option( 'large_size_h', 0 ); // Default: 1024
+    update_option('thumbnail_size_w', 0); // Default: 150
+    update_option('thumbnail_size_h', 0); // Default: 150
+    update_option('medium_size_w', 0); // Default: 300
+    update_option('medium_size_h', 0); // Default: 300
+    update_option('large_size_w', 0); // Default: 1024
+    update_option('large_size_h', 0); // Default: 1024
 
 
     /** Permalink custom structure: /%postname% */
-    update_option( 'permalink_structure', '/%postname%/' );
+    update_option('permalink_structure', '/%postname%/');
 
 
     /** Set Scout Theme to default */
-//    update_option( 'template', 'FlowPress' ); Not working as intended
-//    update_option( 'stylesheet', 'FlowPress' );
+    //    update_option( 'template', 'langxpress' ); Not working as intended
+    //    update_option( 'stylesheet', 'langxpress' );
 
 }
