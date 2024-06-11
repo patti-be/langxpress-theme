@@ -29,24 +29,24 @@
 
 
 
-    <?php $google_analytics_id = get_field('google_analytics_id', 'options'); ?>
-    <?php if ($google_analytics_id) : ?>
+    <!-- <?php $google_analytics_id = get_field('google_analytics_id', 'options'); ?> -->
+    <!-- <?php if ($google_analytics_id) : ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $google_analytics_id ?>"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $google_analytics_id ?>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-            gtag('config', '<?php echo $google_analytics_id; ?>');
-        </script>
-    <?php endif; ?>
+        gtag('config', '<?php echo $google_analytics_id; ?>');
+    </script>
+<?php endif; ?> -->
 
 
-    <?php wp_head(); ?>
+<?php wp_head(); ?>
 
 </head>
 
