@@ -1,86 +1,121 @@
 <?php
-// https://stackoverflow.com/questions/26180688/how-to-add-class-to-link-in-wp-nav-menu
+class Custom_Navwalker extends Walker_Nav_Menu
+{
 
-// let's add "w--current" as a class to the nav element if it is the current page
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-function special_nav_class($classes, $item){
-    if( in_array('current-menu-item', $classes) ){
-        $classes[] = 'w--current ';
-    }
-    return $classes;
-}
-
-// let's add our custom class to the actual link tag
-
-function atg_menu_classes($classes, $item, $args) {
-    if($args->theme_location == 'primary_navigation') {
-        $classes[] = 'navigation__nav-link ';
-    }
-    return $classes;
-}
-add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
-
-
-// let's add classes to the footer links
-
-function atg_menu_classes_footer($classes, $item, $args) {
-    if($args->theme_location == 'footer_navigation') {
-        $classes[] = ' footer__link ';
-    }
-    return $classes;
-}
-add_filter('nav_menu_css_class', 'atg_menu_classes_footer', 1, 3);
-
-
-
-
-
-class Anchor_Only_Walker extends Walker_Nav_Menu {
-
-    // https://github.com/outofthewoods-io/scout/blob/master/wp-content/themes/scout/functions/walker.php
-
-    function start_lvl( &$output, $depth = 0, $args = array() ) {
+    // Start Level
+    function start_lvl(&$output, $depth = 0, $args = array())
+    {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent\n";
+        $output .= "\n$indent<nav class=\"dropdown-column-wrapper w-dropdown-list\"><div class=\"dropdown-pd\"><div class=\"w-layout-grid grid-1-column dropdown-link-column\">\n";
     }
 
-    function end_lvl( &$output, $depth = 0, $args = array() ) {
+    // End Level
+    function end_lvl(&$output, $depth = 0, $args = array())
+    {
         $indent = str_repeat("\t", $depth);
-        $output .= "$indent\n";
+        $output .= "$indent</div></div></nav>\n";
     }
 
-    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    // Start Element
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+    {
+        $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
-        $class_names = $value = '';
-
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes = empty($item->classes) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
 
-        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
-        $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+        $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
+        $id = $id ? ' id="' . esc_attr($id) . '"' : '';
 
-        $output .= $indent . '';
+        if ($depth == 0 && in_array('menu-item-has-children', $classes)) {
+            $output .= $indent . '<div data-delay="0" data-hover="true" class="dropdown-wrapper w-dropdown">';
+            $output .= '<div class="dropdown-toggle w-dropdown-toggle">';
+            $output .= '<div class="dropdown_text">' . apply_filters('the_title', $item->title, $item->ID) . '</div>';
+            $output .= '<div class="line-rounded-icon dropdown-arrow w-embed"><svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">';
+            $output .= '<path d="M6 6L1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>';
+            $output .= '<path d="M11 1L6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>';
+            $output .= '</svg></div>';
+            $output .= '</div>';
+        } else {
+            $output .= $indent . '<a' . $id . $class_names . ' href="' . esc_url($item->url) . '">';
+            $output .= '<div class="nav_menu_link w-nav-link">';
+        }
 
-        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+        $atts = array();
+        $atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
+        $atts['target'] = !empty($item->target) ? $item->target : '';
+        $atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
+        $atts['href']   = !empty($item->url) ? $item->url : '';
+
+        $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args);
+
+        $attributes = '';
+        foreach ($atts as $attr => $value) {
+            if (!empty($value)) {
+                $value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
+                $attributes .= ' ' . $attr . '="' . $value . '"';
+            }
+        }
+
+        $title = apply_filters('the_title', $item->title, $item->ID);
 
         $item_output = $args->before;
-        $item_output .= '<a'. $class_names . $attributes .'>';
-        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-        $item_output .= '</a>';
+        $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= $args->after;
 
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+        if ($depth == 0 && in_array('menu-item-has-children', $classes)) {
+            $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+        } else {
+            $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+            $output .= '</div></a>';
+        }
     }
 
-
-    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+    // End Element
+    function end_el(&$output, $item, $depth = 0, $args = array())
+    {
+        if ($depth == 0 && in_array('menu-item-has-children', $item->classes)) {
+            $output .= '</div>';
+        }
         $output .= "\n";
     }
 }
+?>
+
+
+<!-- 
+// // let's add "w--current" as a class to the nav element if it is the current page
+// add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
+// function special_nav_class($classes, $item)
+// {
+// if (in_array('current-menu-item', $classes)) {
+// $classes[] = 'w--current ';
+// }
+// return $classes;
+// }
+
+// // let's add our custom class to the actual link tag
+
+// function atg_menu_classes($classes, $item, $args)
+// {
+// if ($args->theme_location == 'primary_navigation') {
+// $classes[] = 'navigation__nav-link ';
+// }
+// return $classes;
+// }
+// add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+
+
+// // let's add classes to the footer links
+
+// function atg_menu_classes_footer($classes, $item, $args)
+// {
+// if ($args->theme_location == 'footer_navigation') {
+// $classes[] = ' footer__link ';
+// }
+// return $classes;
+// }
+// add_filter('nav_menu_css_class', 'atg_menu_classes_footer', 1, 3); -->

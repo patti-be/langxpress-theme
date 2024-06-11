@@ -13,6 +13,7 @@ function setup()
     // http://codex.wordpress.org/Function_Reference/register_nav_menus
     register_nav_menus([
         'primary_navigation' => 'Primary Navigation',
+        'mobile_navigation' => 'Mobile Navigation',
         'footer_navigation' => 'Footer Navigation',
     ]);
 
@@ -74,36 +75,36 @@ add_action('after_setup_theme', 'setup');
 /**
  * Register sidebars (optional, uncomment below to activate)
  */
-function widgets_init()
-{
+// function widgets_init()
+// {
 
-    register_sidebar([
-        'name'          => 'Footer Column One',
-        'id'            => 'footer-one',
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h4>',
-        'after_title'   => '</h4>'
-    ]);
+//     register_sidebar([
+//         'name'          => 'Footer Column One',
+//         'id'            => 'footer-one',
+//         'before_widget' => '',
+//         'after_widget'  => '',
+//         'before_title'  => '<h4>',
+//         'after_title'   => '</h4>'
+//     ]);
 
-    register_sidebar([
-        'name'          => 'Footer Column Two',
-        'id'            => 'footer-two',
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h4>',
-        'after_title'   => '</h4>'
-    ]);
+//     register_sidebar([
+//         'name'          => 'Footer Column Two',
+//         'id'            => 'footer-two',
+//         'before_widget' => '',
+//         'after_widget'  => '',
+//         'before_title'  => '<h4>',
+//         'after_title'   => '</h4>'
+//     ]);
 
-    register_sidebar([
-        'name'          => 'Footer Column Three',
-        'id'            => 'footer-three',
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h4>',
-        'after_title'   => '</h4>'
-    ]);
-}
+//     register_sidebar([
+//         'name'          => 'Footer Column Three',
+//         'id'            => 'footer-three',
+//         'before_widget' => '',
+//         'after_widget'  => '',
+//         'before_title'  => '<h4>',
+//         'after_title'   => '</h4>'
+//     ]);
+// }
 
 //add_action('widgets_init', 'widgets_init');
 
