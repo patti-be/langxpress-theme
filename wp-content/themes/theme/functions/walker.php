@@ -83,39 +83,3 @@ class Custom_Navwalker extends Walker_Nav_Menu
         $output .= "\n";
     }
 }
-?>
-
-
-<!-- 
-// // let's add "w--current" as a class to the nav element if it is the current page
-// add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
-// function special_nav_class($classes, $item)
-// {
-// if (in_array('current-menu-item', $classes)) {
-// $classes[] = 'w--current ';
-// }
-// return $classes;
-// }
-
-// // let's add our custom class to the actual link tag
-
-// function atg_menu_classes($classes, $item, $args)
-// {
-// if ($args->theme_location == 'primary_navigation') {
-// $classes[] = 'navigation__nav-link ';
-// }
-// return $classes;
-// }
-// add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
-
-
-// // let's add classes to the footer links
-
-// function atg_menu_classes_footer($classes, $item, $args)
-// {
-// if ($args->theme_location == 'footer_navigation') {
-// $classes[] = ' footer__link ';
-// }
-// return $classes;
-// }
-// add_filter('nav_menu_css_class', 'atg_menu_classes_footer', 1, 3); -->

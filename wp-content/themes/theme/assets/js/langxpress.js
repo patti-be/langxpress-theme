@@ -17678,11 +17678,17 @@ Webflow.require("ix2").init({
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
+        id: "66617c3f12223841e99012c4",
         appliesTo: "PAGE",
         styleBlockIds: [],
-        id: "66617c3f12223841e99012c4",
       },
-      targets: [],
+      targets: [
+        {
+          id: "66617c3f12223841e99012c4",
+          appliesTo: "PAGE",
+          styleBlockIds: [],
+        },
+      ],
       config: [
         {
           continuousParameterGroupId: "a-32-p",
@@ -17705,16 +17711,22 @@ Webflow.require("ix2").init({
       action: {
         id: "",
         actionTypeId: "FADE_EFFECT",
-        config: { actionListId: "fadeIn", autoStopEventId: "e-83" },
         instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-83" },
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
+        id: "6661846d70dc6f24b913bd8d|706e7a49-c0b6-09f2-5126-bce10e0b6c79",
         appliesTo: "ELEMENT",
         styleBlockIds: [],
-        id: "6661846d70dc6f24b913bd8d|706e7a49-c0b6-09f2-5126-bce10e0b6c79",
       },
-      targets: [],
+      targets: [
+        {
+          id: "6661846d70dc6f24b913bd8d|706e7a49-c0b6-09f2-5126-bce10e0b6c79",
+          appliesTo: "ELEMENT",
+          styleBlockIds: [],
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17734,16 +17746,22 @@ Webflow.require("ix2").init({
       action: {
         id: "",
         actionTypeId: "FADE_EFFECT",
-        config: { actionListId: "fadeIn", autoStopEventId: "e-85" },
         instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-85" },
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
+        id: "6661846d70dc6f24b913bd8d|f817a7f8-e447-cfaf-55eb-5bd6094913a3",
         appliesTo: "ELEMENT",
         styleBlockIds: [],
-        id: "6661846d70dc6f24b913bd8d|f817a7f8-e447-cfaf-55eb-5bd6094913a3",
       },
-      targets: [],
+      targets: [
+        {
+          id: "6661846d70dc6f24b913bd8d|f817a7f8-e447-cfaf-55eb-5bd6094913a3",
+          appliesTo: "ELEMENT",
+          styleBlockIds: [],
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17763,8 +17781,8 @@ Webflow.require("ix2").init({
       action: {
         id: "",
         actionTypeId: "FADE_EFFECT",
-        config: { actionListId: "fadeIn", autoStopEventId: "e-87" },
         instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-87" },
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
@@ -17773,7 +17791,14 @@ Webflow.require("ix2").init({
           "6661846d70dc6f24b913bd8d|03c53a18-5981-3ab4-579b-8aa5c350bc63",
         appliesTo: "CLASS",
       },
-      targets: [],
+      targets: [
+        {
+          selector: ".image-hero_txt",
+          originalId:
+            "6661846d70dc6f24b913bd8d|03c53a18-5981-3ab4-579b-8aa5c350bc63",
+          appliesTo: "CLASS",
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17793,8 +17818,8 @@ Webflow.require("ix2").init({
       action: {
         id: "",
         actionTypeId: "FADE_EFFECT",
-        config: { actionListId: "fadeIn", autoStopEventId: "e-89" },
         instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-89" },
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
@@ -17803,7 +17828,14 @@ Webflow.require("ix2").init({
           "6661846d70dc6f24b913bd8d|ed8c0ce3-09b6-17bb-b3dc-8e6006a1f99b",
         appliesTo: "CLASS",
       },
-      targets: [],
+      targets: [
+        {
+          selector: ".blog-post",
+          originalId:
+            "6661846d70dc6f24b913bd8d|ed8c0ce3-09b6-17bb-b3dc-8e6006a1f99b",
+          appliesTo: "CLASS",
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17823,8 +17855,8 @@ Webflow.require("ix2").init({
       action: {
         id: "",
         actionTypeId: "FADE_EFFECT",
-        config: { actionListId: "fadeIn", autoStopEventId: "e-91" },
         instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-91" },
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
@@ -17833,7 +17865,14 @@ Webflow.require("ix2").init({
           "6661846d70dc6f24b913bd8d|eb921c6d-8d6c-828c-c613-f153093ca13e",
         appliesTo: "CLASS",
       },
-      targets: [],
+      targets: [
+        {
+          selector: ".section_share",
+          originalId:
+            "6661846d70dc6f24b913bd8d|eb921c6d-8d6c-828c-c613-f153093ca13e",
+          appliesTo: "CLASS",
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17853,8 +17892,8 @@ Webflow.require("ix2").init({
       action: {
         id: "",
         actionTypeId: "FADE_EFFECT",
-        config: { actionListId: "fadeIn", autoStopEventId: "e-93" },
         instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-93" },
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
@@ -17863,7 +17902,14 @@ Webflow.require("ix2").init({
           "665782fb3abc678d455d9168|b0882b72-91dd-cb7e-ed3c-507ce129b3e9",
         appliesTo: "CLASS",
       },
-      targets: [],
+      targets: [
+        {
+          selector: ".hero-text",
+          originalId:
+            "665782fb3abc678d455d9168|b0882b72-91dd-cb7e-ed3c-507ce129b3e9",
+          appliesTo: "CLASS",
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17883,8 +17929,8 @@ Webflow.require("ix2").init({
       action: {
         id: "",
         actionTypeId: "FADE_EFFECT",
-        config: { actionListId: "fadeIn", autoStopEventId: "e-95" },
         instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-95" },
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
@@ -17893,7 +17939,14 @@ Webflow.require("ix2").init({
           "664b1ad2be6a92018add9893|0d73de1b-364f-e41f-3ae9-84ecd582a252",
         appliesTo: "CLASS",
       },
-      targets: [],
+      targets: [
+        {
+          selector: ".feature-card",
+          originalId:
+            "664b1ad2be6a92018add9893|0d73de1b-364f-e41f-3ae9-84ecd582a252",
+          appliesTo: "CLASS",
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17925,11 +17978,17 @@ Webflow.require("ix2").init({
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
+        id: "66617c3f12223841e99012c4",
         appliesTo: "PAGE",
         styleBlockIds: [],
-        id: "66617c3f12223841e99012c4",
       },
-      targets: [],
+      targets: [
+        {
+          id: "66617c3f12223841e99012c4",
+          appliesTo: "PAGE",
+          styleBlockIds: [],
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17961,11 +18020,17 @@ Webflow.require("ix2").init({
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
+        id: "66617c3f12223841e99012c4",
         appliesTo: "PAGE",
         styleBlockIds: [],
-        id: "66617c3f12223841e99012c4",
       },
-      targets: [],
+      targets: [
+        {
+          id: "66617c3f12223841e99012c4",
+          appliesTo: "PAGE",
+          styleBlockIds: [],
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -17976,6 +18041,350 @@ Webflow.require("ix2").init({
         effectIn: null,
       },
       createdOn: 1718111916474,
+    },
+    "e-98": {
+      id: "e-98",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "SCROLLING_IN_VIEW",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_CONTINUOUS_ACTION",
+        config: { actionListId: "a-25", affectedElements: {}, duration: 0 },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|862c06db-29b9-043f-1ab6-1eda09e2e6ea",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [
+        {
+          id: "666954a55b66566a334968fa|862c06db-29b9-043f-1ab6-1eda09e2e6ea",
+          appliesTo: "ELEMENT",
+          styleBlockIds: [],
+        },
+      ],
+      config: [
+        {
+          continuousParameterGroupId: "a-25-p",
+          smoothing: 50,
+          startsEntering: true,
+          addStartOffset: false,
+          addOffsetValue: 50,
+          startsExiting: false,
+          addEndOffset: false,
+          endOffsetValue: 50,
+        },
+      ],
+      createdOn: 1718179154991,
+    },
+    "e-99": {
+      id: "e-99",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "SCROLLING_IN_VIEW",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_CONTINUOUS_ACTION",
+        config: { actionListId: "a-26", affectedElements: {}, duration: 0 },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|862c06db-29b9-043f-1ab6-1eda09e2e6f1",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [
+        {
+          id: "666954a55b66566a334968fa|862c06db-29b9-043f-1ab6-1eda09e2e6f1",
+          appliesTo: "ELEMENT",
+          styleBlockIds: [],
+        },
+      ],
+      config: [
+        {
+          continuousParameterGroupId: "a-26-p",
+          smoothing: 50,
+          startsEntering: true,
+          addStartOffset: false,
+          addOffsetValue: 50,
+          startsExiting: false,
+          addEndOffset: false,
+          endOffsetValue: 50,
+        },
+      ],
+      createdOn: 1718179154991,
+    },
+    "e-100": {
+      id: "e-100",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "SCROLLING_IN_VIEW",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_CONTINUOUS_ACTION",
+        config: { actionListId: "a-3", affectedElements: {}, duration: 0 },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|862c06db-29b9-043f-1ab6-1eda09e2e6fe",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [
+        {
+          id: "666954a55b66566a334968fa|862c06db-29b9-043f-1ab6-1eda09e2e6fe",
+          appliesTo: "ELEMENT",
+          styleBlockIds: [],
+        },
+      ],
+      config: [
+        {
+          continuousParameterGroupId: "a-3-p",
+          smoothing: 84,
+          startsEntering: true,
+          addStartOffset: false,
+          addOffsetValue: 50,
+          startsExiting: false,
+          addEndOffset: false,
+          endOffsetValue: 50,
+        },
+      ],
+      createdOn: 1718179154991,
+    },
+    "e-101": {
+      id: "e-101",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "SCROLLING_IN_VIEW",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_CONTINUOUS_ACTION",
+        config: { actionListId: "a-3", affectedElements: {}, duration: 0 },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|84a7b741-fa4e-e24b-128f-bab397cc188b",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [],
+      config: [
+        {
+          continuousParameterGroupId: "a-3-p",
+          smoothing: 84,
+          startsEntering: true,
+          addStartOffset: false,
+          addOffsetValue: 50,
+          startsExiting: false,
+          addEndOffset: false,
+          endOffsetValue: 50,
+        },
+      ],
+      createdOn: 1718179451885,
+    },
+    "e-102": {
+      id: "e-102",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "SCROLL_INTO_VIEW",
+      action: {
+        id: "",
+        actionTypeId: "FADE_EFFECT",
+        instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-103" },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|d0fbe85e-7c3c-fb36-7111-a50ad9bd2d27",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: 10,
+        scrollOffsetUnit: "%",
+        delay: 300,
+        direction: null,
+        effectIn: true,
+      },
+      createdOn: 1718179559193,
+    },
+    "e-104": {
+      id: "e-104",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "SCROLL_INTO_VIEW",
+      action: {
+        id: "",
+        actionTypeId: "FADE_EFFECT",
+        instant: false,
+        config: { actionListId: "fadeIn", autoStopEventId: "e-105" },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|d0fbe85e-7c3c-fb36-7111-a50ad9bd2d29",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: 10,
+        scrollOffsetUnit: "%",
+        delay: 300,
+        direction: null,
+        effectIn: true,
+      },
+      createdOn: 1718179559193,
+    },
+    "e-106": {
+      id: "e-106",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "DROPDOWN_OPEN",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_START_ACTION",
+        config: {
+          delay: 0,
+          easing: "",
+          duration: 0,
+          actionListId: "a-8",
+          affectedElements: {},
+          playInReverse: false,
+          autoStopEventId: "e-107",
+        },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|7ed9dcf1-b855-d7f7-b93e-6655aec5b791",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: null,
+        scrollOffsetUnit: null,
+        delay: null,
+        direction: null,
+        effectIn: null,
+      },
+      createdOn: 1718179689751,
+    },
+    "e-107": {
+      id: "e-107",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "DROPDOWN_CLOSE",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_START_ACTION",
+        config: {
+          delay: 0,
+          easing: "",
+          duration: 0,
+          actionListId: "a-9",
+          affectedElements: {},
+          playInReverse: false,
+          autoStopEventId: "e-106",
+        },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|7ed9dcf1-b855-d7f7-b93e-6655aec5b791",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: null,
+        scrollOffsetUnit: null,
+        delay: null,
+        direction: null,
+        effectIn: null,
+      },
+      createdOn: 1718179689751,
+    },
+    "e-108": {
+      id: "e-108",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "DROPDOWN_OPEN",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_START_ACTION",
+        config: {
+          delay: 0,
+          easing: "",
+          duration: 0,
+          actionListId: "a-8",
+          affectedElements: {},
+          playInReverse: false,
+          autoStopEventId: "e-109",
+        },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|7ed9dcf1-b855-d7f7-b93e-6655aec5b7a1",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: null,
+        scrollOffsetUnit: null,
+        delay: null,
+        direction: null,
+        effectIn: null,
+      },
+      createdOn: 1718179689751,
+    },
+    "e-109": {
+      id: "e-109",
+      name: "",
+      animationType: "preset",
+      eventTypeId: "DROPDOWN_CLOSE",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_START_ACTION",
+        config: {
+          delay: 0,
+          easing: "",
+          duration: 0,
+          actionListId: "a-9",
+          affectedElements: {},
+          playInReverse: false,
+          autoStopEventId: "e-108",
+        },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        id: "666954a55b66566a334968fa|7ed9dcf1-b855-d7f7-b93e-6655aec5b7a1",
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: null,
+        scrollOffsetUnit: null,
+        delay: null,
+        direction: null,
+        effectIn: null,
+      },
+      createdOn: 1718179689751,
     },
   },
   actionLists: {

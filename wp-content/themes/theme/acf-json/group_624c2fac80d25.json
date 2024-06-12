@@ -6,6 +6,7 @@
             "key": "field_624c305374ad8",
             "label": "Page Builder",
             "name": "page_builder",
+            "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -26,6 +27,7 @@
                             "key": "field_624c311b74ad9",
                             "label": "Content",
                             "name": "",
+                            "aria-label": "",
                             "type": "tab",
                             "instructions": "",
                             "required": 0,
@@ -36,12 +38,14 @@
                                 "id": ""
                             },
                             "placement": "top",
-                            "endpoint": 0
+                            "endpoint": 0,
+                            "selected": 0
                         },
                         {
                             "key": "field_624c315574adb",
                             "label": "Content",
                             "name": "content",
+                            "aria-label": "",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -61,6 +65,7 @@
                             "key": "field_624c314a74ada",
                             "label": "Settings",
                             "name": "",
+                            "aria-label": "",
                             "type": "tab",
                             "instructions": "",
                             "required": 0,
@@ -71,12 +76,14 @@
                                 "id": ""
                             },
                             "placement": "top",
-                            "endpoint": 0
+                            "endpoint": 0,
+                            "selected": 0
                         },
                         {
                             "key": "field_624c3304510f0",
                             "label": "Settings",
                             "name": "settings",
+                            "aria-label": "",
                             "type": "group",
                             "instructions": "",
                             "required": 0,
@@ -92,6 +99,7 @@
                                     "key": "field_624c318e74adc",
                                     "label": "Space Top",
                                     "name": "space_top",
+                                    "aria-label": "",
                                     "type": "button_group",
                                     "instructions": "",
                                     "required": 0,
@@ -118,6 +126,7 @@
                                     "key": "field_624c31e574add",
                                     "label": "Space Bottom",
                                     "name": "space_bottom",
+                                    "aria-label": "",
                                     "type": "button_group",
                                     "instructions": "",
                                     "required": 0,
@@ -145,11 +154,46 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6669864bfce2d": {
+                    "key": "layout_6669864bfce2d",
+                    "name": "image",
+                    "label": "Image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6669865efce2f",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Add Section",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add Section"
         }
     ],
     "location": [
@@ -172,5 +216,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649161073
+    "modified": 1718192112
 }

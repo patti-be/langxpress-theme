@@ -12,11 +12,9 @@
  */
 ?>
 
-<?php global $data_wf_page; //We need to grab the webflow page data id to make interactions work. (set in the template file) 
-?>
 
 <!doctype html>
-<html <?php language_attributes(); ?> data-wf-page="<?php echo $data_wf_page ?>" data-wf-site="61d6c55c4ba164ce5f9cc4cc">
+<html <?php language_attributes(); ?> data-wf-page="666954a55b66566a334968fa" data-wf-site="664b1ad2be6a92018add9897">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Scout includes
  *
@@ -27,17 +28,22 @@ $scout_includes = [
     'functions/plugin-acf.php',             // Advanced Custom Fields
     'functions/plugin-gravityforms.php',    // Gravity Forms
     'functions/plugin-yoast.php',           // Yoast
-    'functions/woocommerce.php'           // Woocommerce
+    'functions/woocommerce.php',           // Woocommerce
 
     // Custom Post Types
-    //'functions/cpt-partners.php',   // CPT Partners
-    //'functions/cpt-projects.php',   // CPT Projects
-    //'functions/cpt-people.php',     // CPT People
-    //'functions/cpt-careers.php',    // CPT Careers
-    //'functions/cpt-history.php',    // CPT History
+    'functions/cpt-services.php',    // CPT Services
 
 
 ];
+
+function remove_editor_support()
+{
+    // Remove editor support for pages
+    remove_post_type_support('services', 'editor');
+    remove_post_type_support('page', 'editor');
+}
+add_action('init', 'remove_editor_support');
+
 
 foreach ($scout_includes as $file) {
     if (!$filepath = locate_template($file)) {

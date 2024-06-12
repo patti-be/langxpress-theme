@@ -1653,7 +1653,6 @@ figcaption {
 }
 
 .image-divider {
-  background-image: url("../images/image-divider-bg1.jpg");
   background-position: 50%;
   background-size: cover;
   border-radius: 25px;
@@ -1672,6 +1671,8 @@ figcaption {
   font-family: Kurdis Extracondensed, sans-serif;
   font-size: 5.8rem;
   display: inline;
+  /* new */
+  line-height: 1;
 }
 
 .animated-text_row-left {
@@ -1978,7 +1979,7 @@ figcaption {
 }
 
 .image-hero_img {
-  background-image: url("../images/image-divider-bg1.jpg");
+  /* background-image: url("../images/image-divider-bg1.jpg"); */
   background-position: 50%;
   background-size: cover;
   border-radius: 25px;
