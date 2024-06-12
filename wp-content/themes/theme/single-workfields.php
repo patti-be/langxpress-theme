@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying an Artist
+ * The template for displaying an Fields
  *
  * Theme: langXpress
  */
@@ -10,50 +10,6 @@
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <!-- SECTION HERO TEXT-IMAGE -->
-
-    <section class="section_hero-text">
-        <div class="padding-global">
-            <h1 class="heading-page clip-text left">Services &gt; <?php the_title(); ?></h1>
-            <div class="hero-text">
-                <?php if (have_rows('image_text')) : ?>
-                    <?php while (have_rows('image_text')) : the_row();
-                        // Get sub field values.
-                        $image = get_sub_field('image');
-                        $text = get_sub_field('text');
-                    ?>
-                        <?php if ($image) : ?>
-                            <div class="hero-text_image">
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($text) : ?>
-                            <div class="hero-text_txt">
-                                <p><?php echo $text; ?></p>
-                            </div>
-                        <?php endif; ?>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION TEXT CARDS -->
-
-    <section class="section_text-cards">
-        <div class="padding-global">
-            <div class="text-cards">
-                <?php if (have_rows('text_cards')) : ?>
-                    <?php while (have_rows('text_cards')) : the_row(); ?>
-                        <div class="text-card">
-                            <div class="text-size-small text-color-alternate"><?php the_sub_field('card_text'); ?></div>
-                        </div>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
     <!-- SECTION IMAGE DIVIDER -->
     <?php
     $image = get_field('image_divider');
@@ -61,33 +17,72 @@
 
     <div class="section_image-divider">
         <div class="padding-global">
-            <div class="container-large">
+            <h1 class="heading-page clip-text left">Fields &gt; <?php the_title(); ?></h1>
+            <div>
                 <div class="image-divider" style="background-image: url('<?php echo esc_url($image['url']); ?>');"></div>
             </div>
         </div>
     </div>
 
     <!-- SECTION ANIMATED TEXT -->
+
     <?php
-    // Get the text from the ACF field 'animated_text'
-    $animated_text = get_field('animated_text');
-
-    // Repeat the text 12 times to create 12 instances
-    $repeated_text = str_repeat($animated_text . ' • ', 12);
+    // Check if the repeater field has rows of data
+    if (have_rows('animated_text')) :
     ?>
+        <div data-w-id="84a7b741-fa4e-e24b-128f-bab397cc188b" class="section_animated-text">
+            <?php
+            // Create an array to store all the animated text entries
+            $animated_texts = [];
 
-    <div data-w-id="862c06db-29b9-043f-1ab6-1eda09e2e6fe" class="section_animated-text">
-        <div class="animated-text_row-right">
-            <?php for ($i = 0; $i < 12; $i++) : ?>
-                <div class="animated-text"><?php echo $repeated_text; ?></div>
-            <?php endfor; ?>
+            // Loop through the rows of data
+            while (have_rows('animated_text')) : the_row();
+                // Get the sub field value
+                $text = get_sub_field('text');
+                if ($text) {
+                    $animated_texts[] = $text . ' • ';
+                }
+            endwhile;
+
+            // If there are animated texts, divide them into left and right rows
+            if (!empty($animated_texts)) :
+                $half = ceil(count($animated_texts) / 2);
+                $left_texts = array_slice($animated_texts, 0, $half);
+                $right_texts = array_slice($animated_texts, $half);
+            ?>
+                <div class="animated-text_row-left">
+                    <?php for ($i = 0; $i < 2; $i++) : ?>
+                        <?php foreach ($left_texts as $text) : ?>
+                            <div class="animated-text-small"><?php echo esc_html($text); ?></div>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
+                </div>
+                <div class="animated-text_row-right">
+                    <?php for ($i = 0; $i < 2; $i++) : ?>
+                        <?php foreach ($right_texts as $text) : ?>
+                            <div class="animated-text-small"><?php echo esc_html($text); ?></div>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
+                </div>
+                <div class="animated-text_row-left">
+                    <?php for ($i = 0; $i < 2; $i++) : ?>
+                        <?php foreach ($left_texts as $text) : ?>
+                            <div class="animated-text-small"><?php echo esc_html($text); ?></div>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
+                </div>
+                <div class="animated-text_row-right">
+                    <?php for ($i = 0; $i < 2; $i++) : ?>
+                        <?php foreach ($right_texts as $text) : ?>
+                            <div class="animated-text-small"><?php echo esc_html($text); ?></div>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
+                </div>
+            <?php endif; ?>
         </div>
-        <div class="animated-text_row-left">
-            <?php for ($i = 0; $i < 12; $i++) : ?>
-                <div class="animated-text"><?php echo $repeated_text; ?></div>
-            <?php endfor; ?>
-        </div>
-    </div>
+    <?php
+    endif;
+    ?>
 
     <!-- SECTION LINE DIVIDER -->
 
@@ -101,6 +96,7 @@
         </div>
     <?php endif; ?>
 
+
     <!-- SECTION TESTIMONIALS -->
 
     <div class="section_testimonial">
@@ -112,6 +108,8 @@
                     $heading = get_sub_field('heading');
                     $review = get_sub_field('review');
                     $company_name = get_sub_field('company_name');
+                    $review_second = get_sub_field('review_second');
+                    $company_second = get_sub_field('company_second');
                     $first_image = get_sub_field('first_image');
                     $second_image = get_sub_field('second_image');
                     ?>
@@ -120,6 +118,12 @@
                         <div class="testimonial_text-block">
                             <p class="testimonial_txt"><?php echo esc_html($review); ?></p>
                             <div class="testimonial_client-name"><?php echo esc_html($company_name); ?></div>
+                        </div>
+                        <div class="testimonial_block-right">
+                            <div class="testimonial_text-block is-right">
+                                <p class="testimonial_txt fade-in"><?php echo esc_html($review_second); ?></p>
+                                <div class="testimonial_client-name"><?php echo esc_html($company_second); ?></div>
+                            </div>
                         </div>
                         <div class="testimonial_images">
                             <div class="testimonial_images_col1">
@@ -135,7 +139,13 @@
             <?php endif; ?>
         </div>
     </div>
-
+    <div class="line-divider">
+        <div class="padding-global">
+            <div class="container-large">
+                <div class="line-divider_inner"></div>
+            </div>
+        </div>
+    </div>
     <!-- LATEST POSTS -->
 
     <?php
@@ -190,7 +200,6 @@
             </div>
         </div>
     </div>
-
 
 
 <?php endwhile; ?>

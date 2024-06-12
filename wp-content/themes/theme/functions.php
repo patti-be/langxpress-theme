@@ -32,6 +32,7 @@ $scout_includes = [
 
     // Custom Post Types
     'functions/cpt-services.php',    // CPT Services
+    'functions/cpt-workfields.php',    // CPT Fields
 
 
 ];
@@ -40,7 +41,9 @@ function remove_editor_support()
 {
     // Remove editor support for pages
     remove_post_type_support('services', 'editor');
+    remove_post_type_support('workfields', 'editor');
     remove_post_type_support('page', 'editor');
+    remove_post_type_support('post', 'editor');
 }
 add_action('init', 'remove_editor_support');
 

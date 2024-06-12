@@ -48,7 +48,7 @@ function custom_post_type_services()
         'public'                => true,
         'show_ui'               => true,
         'show_in_menu'          => true,
-        'menu_position'         => 3,
+        'menu_position'         => 4,
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
