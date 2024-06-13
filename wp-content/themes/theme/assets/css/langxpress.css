@@ -1273,7 +1273,7 @@ figcaption {
 }
 
 .spacer-large {
-  padding-top: 3rem;
+  padding-top: 5rem;
 }
 
 .spacer-xxlarge {
@@ -2071,7 +2071,7 @@ figcaption {
 }
 
 .text-image_img {
-  background-image: url("../images/image-divider-bg1.jpg");
+  /* background-image: url("../images/image-divider-bg1.jpg"); */
   background-position: 50%;
   background-size: cover;
   border-radius: 25px;
@@ -2095,6 +2095,7 @@ figcaption {
   margin-left: -10px;
   margin-right: -10px;
   display: flex;
+  align-items: stretch;
 }
 
 .feature-card {
@@ -2108,6 +2109,7 @@ figcaption {
 
 .feature-card_img {
   margin-bottom: 2.7rem;
+  height: 11rem;
 }
 
 .spacer-card {
@@ -2269,11 +2271,12 @@ figcaption {
   color: var(--text-color--text-secondary);
   border-radius: 25px;
   flex-flow: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 10px;
   padding: 3rem 2rem;
   display: flex;
+  height: 96%;
 }
 
 .nav_menu_dropdown-link {
