@@ -25,9 +25,6 @@
     <link href="<?php echo get_template_directory_uri(); ?>/assets/images/webclip.png" rel="apple-touch-icon">
 
 
-
-
-
     <?php wp_head(); ?>
 
 </head>

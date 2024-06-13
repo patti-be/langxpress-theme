@@ -1098,7 +1098,8 @@ textarea.w-select {
   vertical-align: top;
   text-decoration: none;
   color: #222222;
-  padding: 20px;
+  /* new */
+  /* padding: 20px; */
   text-align: left;
   margin-left: auto;
   margin-right: auto;
@@ -1111,7 +1112,8 @@ textarea.w-select {
   user-select: none;
   /* display: inline-block; */
   cursor: pointer;
-  padding-right: 40px;
+  /* new */
+  /* padding-right: 40px; */
 }
 .w-dropdown-toggle:focus {
   outline: 0;
@@ -2030,4 +2032,21 @@ html {
 /* new */
 .image-hero_txt p strong {
   color: #246871;
+}
+
+.search-form {
+  display: none;
+  position: absolute;
+  top: 90%;
+  right: 0;
+}
+.search-form input {
+  background-color: transparent;
+  border-radius: 25px;
+  border: 1px solid gray;
+  padding: 8px;
+}
+
+.search-form.show {
+  display: block;
 }

@@ -1502,6 +1502,7 @@ figcaption {
 
 .nav_menu_search {
   display: flex;
+  cursor: pointer;
 }
 
 .home-hero {

@@ -52,3 +52,12 @@ $(document).ready(function () {
     doc[addEvent](type, fix, true);
   }
 })(document);
+
+document.addEventListener("DOMContentLoaded", function () {
+  var searchIcon = document.querySelector(".search-icon");
+  var searchForm = document.querySelector(".search-form");
+
+  searchIcon.addEventListener("click", function () {
+    searchForm.classList.toggle("show");
+  });
+});
