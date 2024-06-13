@@ -9,7 +9,6 @@ $(document).ready(function () {
   });
   // Define the function to call
   function headingInView(element) {
-    console.log("Heading is in view!");
     $(element).toggleClass("reveal");
   }
   const centerElement = document.querySelector(".clip-image");
@@ -29,6 +28,23 @@ $(document).ready(function () {
   const headingElements = document.querySelectorAll(".clip-text.left");
   headingElements.forEach((element) => {
     observer.observe(element);
+  });
+
+  jQuery(document).ready(function ($) {
+    var navComponent = $(".nav_component");
+
+    // Check if body has 'home' class
+    if ($("body").hasClass("home")) {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+          // Scrolling down
+          navComponent.addClass("scrolled");
+        } else {
+          // Scrolling up
+          navComponent.removeClass("scrolled");
+        }
+      });
+    }
   });
 });
 

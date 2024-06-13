@@ -1097,7 +1097,7 @@ textarea.w-select {
   position: relative;
   vertical-align: top;
   text-decoration: none;
-  color: #222222;
+  /* color: #222222; */
   /* new */
   /* padding: 20px; */
   text-align: left;
@@ -2040,6 +2040,10 @@ html {
   top: 90%;
   right: 0;
 }
+.search-field.is-home {
+  background-color: white;
+  color: #161a1c;
+}
 .search-form input {
   background-color: transparent;
   border-radius: 25px;
@@ -2049,4 +2053,16 @@ html {
 
 .search-form.show {
   display: block;
+}
+
+.search-submit {
+  opacity: 0;
+}
+
+.nav_component {
+  transition: transform 0.5s ease; /* Transition effect */
+}
+
+.nav_component.scrolled {
+  transform: translateY(-8rem); /* Move up when scrolled */
 }

@@ -1294,7 +1294,7 @@ figcaption {
 .nav_component {
   background-color: var(--background-color--background-primary);
   width: 100%;
-  position: fixed;
+  position: fixed !important;
   top: 0%;
   bottom: auto;
   left: 0%;
@@ -1551,7 +1551,7 @@ figcaption {
 }
 
 .nav-desktop {
-  border-bottom: 2px solid var(--base-color-brand--accent-green);
+  border-bottom: 2px solid #66f475;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -2476,7 +2476,7 @@ figcaption {
 }
 
 .navigation {
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
   display: block;
   position: relative;
 }

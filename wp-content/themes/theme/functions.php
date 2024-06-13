@@ -20,6 +20,7 @@ $scout_includes = [
     'functions/walker.php',     // Webflow compatible navwalker
     'functions/editor.php',     // TinyMCE Editor overrides
     'functions/extras.php',     // Other stuff
+    'functions/handle-contact-form.php',     // Other stuff
     'functions/titles.php',     // Page titles
     'functions/ajax.php',       // WP Ajax requests
     'functions/cleanup.php',     // Cleaning up outputs

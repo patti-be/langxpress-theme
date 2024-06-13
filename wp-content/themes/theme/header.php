@@ -14,7 +14,7 @@
 
 
 <!doctype html>
-<html <?php language_attributes(); ?> data-wf-page="666954a55b66566a334968fa" data-wf-site="664b1ad2be6a92018add9897">
+<html <?php language_attributes(); ?> data-wf-page="<?php echo is_front_page() ? '664b1ad2be6a92018add9893' : '666954a55b66566a334968fa'; ?>" data-wf-site="664b1ad2be6a92018add9897">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
@@ -30,8 +30,7 @@
 </head>
 
 
-<body <?php //body_class(); can cause conflicts with css components 
-        ?>>
+<body class="<?php echo is_front_page() ? 'home' : ''; ?>">
     <?php wp_body_open(); ?>
     <div class="page-wrapper">
 
