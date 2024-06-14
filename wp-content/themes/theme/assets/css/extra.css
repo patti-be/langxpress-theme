@@ -2152,3 +2152,12 @@ textarea.wpcf7-form-control {
 .wpcf7-spinner {
   display: none;
 }
+
+.blog-card.is-blog {
+  width: 100%;
+}
+
+.blog-card_inner.is-blog {
+  display: flex;
+  flex-direction: column;
+}

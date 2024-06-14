@@ -79,7 +79,7 @@
                     <div class="max-width-large">
                         <h2>Share</h2>
                         <div class="share">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $post_url; ?>&title=<?php echo $post_title; ?>" target="_blank" class="share_link">LinkedIn</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $post_url; ?>/" target="_blank" class="share_link" target="_blank" class="share_link">LinkedIn</a>
                             <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/vertical-line.svg" alt="" class="share_divider">
                             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $post_url; ?>" target="_blank" class="share_link">Facebook</a>
                             <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/vertical-line.svg" alt="" class="share_divider">

@@ -10,7 +10,7 @@
 ?>
 
 
-<div class="footer">
+<div class="footer" id="contact">
     <div class="padding-global">
         <div class="footer_inner">
             <div class="footer_links">

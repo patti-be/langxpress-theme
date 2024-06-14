@@ -16,8 +16,4 @@
 //{
 //    $post_id = get_option( 'page_for_posts' ); // get the ID of the 'blog' page.
 //}
-//?>
-
-
-
-<h1><?php echo title(); //cleaned up output ?></h1>
+//

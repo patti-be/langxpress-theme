@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Classic Template
  */
@@ -6,7 +7,7 @@
 
 
 <section class="">
-    <div class="container">
+    <div class="container test">
 
         <h1><?php the_title() ?></h1>
 

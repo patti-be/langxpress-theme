@@ -24,8 +24,28 @@
     <link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="<?php echo get_template_directory_uri(); ?>/assets/images/webclip.png" rel="apple-touch-icon">
 
+    <?php
+    if (is_single()) {
+        global $post;
+        $post_url = get_permalink();
+        $post_title = get_the_title();
+        $post_excerpt = get_the_excerpt();
+        $post_image = get_the_post_thumbnail_url($post->ID, 'full');
+    ?>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="<?php echo esc_url($post_url); ?>" />
+        <meta property="og:title" content="<?php echo esc_attr($post_title); ?>" />
+        <meta property="og:description" content="<?php echo esc_attr($post_excerpt); ?>" />
+        <?php if ($post_image) { ?>
+            <meta property="og:image" content="<?php echo esc_url($post_image); ?>" />
+        <?php } ?>
+    <?php
+    }
+    ?>
 
     <?php wp_head(); ?>
+</head>
+<?php wp_head(); ?>
 
 </head>
 
