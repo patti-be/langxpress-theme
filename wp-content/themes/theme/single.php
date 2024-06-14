@@ -87,24 +87,56 @@
                             <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/vertical-line.svg" alt="" class="share_divider">
                             <a href="mailto:?subject=<?php echo $post_title; ?>&body=<?php echo $post_url; ?>" target="_blank" class="share_link">Email</a>
                             <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/vertical-line.svg" alt="" class="share_divider">
-                            <a href="#" class="share_link" onclick="copyToClipboard('<?php echo $post_url; ?>')">Copy Link</a>
+                            <a href="#" class="share_link" id="copy-link" onclick="copyToClipboard('<?php echo esc_js($post_url); ?>'); return false;">Copy Link</a>
+
                         </div>
                     </div>
                 </div>
 
                 <script>
                     function copyToClipboard(url) {
-                        navigator.clipboard.writeText(url).then(function() {
-                            alert('Link copied to clipboard!');
-                        }, function(err) {
-                            console.error('Could not copy text: ', err);
-                        });
+                        // Decode the URL
+                        var decodedUrl = decodeURIComponent(url);
+
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            navigator.clipboard.writeText(decodedUrl).then(function() {
+                                // Change the inner text to "Copied!" after successful copying
+                                document.getElementById("copy-link").innerText = "Copied!";
+                            }, function(err) {
+                                console.error('Could not copy text: ', err);
+                            });
+                        } else {
+                            // Fallback method for browsers that do not support navigator.clipboard
+                            var textArea = document.createElement("textarea");
+                            textArea.value = decodedUrl;
+                            textArea.style.position = "fixed"; // avoid scrolling to bottom
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+
+                            try {
+                                var successful = document.execCommand('copy');
+                                if (successful) {
+                                    // Change the inner text to "Copied!" after successful copying
+                                    document.getElementById("copy-link").innerText = "Copied!";
+                                }
+                            } catch (err) {
+                                console.error('Fallback: Could not copy text', err);
+                            }
+
+                            document.body.removeChild(textArea);
+                        }
                     }
                 </script>
                 <!-- PREVIOUS - NEXT BUTTONS -->
                 <?php
-                $next_post_url = get_permalink(get_adjacent_post(false, '', false)->ID);
-                $previous_post_url = get_permalink(get_adjacent_post(false, '', true)->ID);
+                // Get the next and previous posts
+                $next_post = get_adjacent_post(false, '', false);
+                $previous_post = get_adjacent_post(false, '', true);
+
+                // Get the URLs of the next and previous posts
+                $next_post_url = $next_post ? get_permalink($next_post->ID) : '#';
+                $previous_post_url = $previous_post ? get_permalink($previous_post->ID) : '#';
                 ?>
 
                 <div class="spacer-huge"></div>
@@ -122,6 +154,7 @@
                             </svg></div>
                     </a>
                 </div>
+
             </div>
         </div>
         <div class="line-divider">

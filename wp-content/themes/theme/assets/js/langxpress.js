@@ -17582,90 +17582,6 @@ Webflow.require("ix2").init({
       },
       createdOn: 1718105325905,
     },
-    "e-76": {
-      id: "e-76",
-      name: "",
-      animationType: "preset",
-      eventTypeId: "DROPDOWN_OPEN",
-      action: {
-        id: "",
-        actionTypeId: "GENERAL_START_ACTION",
-        config: {
-          delay: 0,
-          easing: "",
-          duration: 0,
-          actionListId: "a-30",
-          affectedElements: {},
-          playInReverse: false,
-          autoStopEventId: "e-77",
-        },
-      },
-      mediaQueries: ["main"],
-      target: {
-        id: "b5b93e15-6be4-1a75-7312-7fa51171e014",
-        appliesTo: "ELEMENT",
-        styleBlockIds: [],
-      },
-      targets: [
-        {
-          id: "b5b93e15-6be4-1a75-7312-7fa51171e014",
-          appliesTo: "ELEMENT",
-          styleBlockIds: [],
-        },
-      ],
-      config: {
-        loop: false,
-        playInReverse: false,
-        scrollOffsetValue: null,
-        scrollOffsetUnit: null,
-        delay: null,
-        direction: null,
-        effectIn: null,
-      },
-      createdOn: 1718105325905,
-    },
-    "e-77": {
-      id: "e-77",
-      name: "",
-      animationType: "preset",
-      eventTypeId: "DROPDOWN_CLOSE",
-      action: {
-        id: "",
-        actionTypeId: "GENERAL_START_ACTION",
-        config: {
-          delay: 0,
-          easing: "",
-          duration: 0,
-          actionListId: "a-31",
-          affectedElements: {},
-          playInReverse: false,
-          autoStopEventId: "e-76",
-        },
-      },
-      mediaQueries: ["main"],
-      target: {
-        id: "b5b93e15-6be4-1a75-7312-7fa51171e014",
-        appliesTo: "ELEMENT",
-        styleBlockIds: [],
-      },
-      targets: [
-        {
-          id: "b5b93e15-6be4-1a75-7312-7fa51171e014",
-          appliesTo: "ELEMENT",
-          styleBlockIds: [],
-        },
-      ],
-      config: {
-        loop: false,
-        playInReverse: false,
-        scrollOffsetValue: null,
-        scrollOffsetUnit: null,
-        delay: null,
-        direction: null,
-        effectIn: null,
-      },
-      createdOn: 1718105325905,
-    },
     "e-81": {
       id: "e-81",
       name: "",
@@ -18280,11 +18196,17 @@ Webflow.require("ix2").init({
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
+        id: "666954a55b66566a334968fa",
         appliesTo: "PAGE",
         styleBlockIds: [],
-        id: "666954a55b66566a334968fa",
       },
-      targets: [],
+      targets: [
+        {
+          id: "666954a55b66566a334968fa",
+          appliesTo: "PAGE",
+          styleBlockIds: [],
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -18316,11 +18238,17 @@ Webflow.require("ix2").init({
       },
       mediaQueries: ["main", "medium", "small", "tiny"],
       target: {
+        id: "666954a55b66566a334968fa",
         appliesTo: "PAGE",
         styleBlockIds: [],
-        id: "666954a55b66566a334968fa",
       },
-      targets: [],
+      targets: [
+        {
+          id: "666954a55b66566a334968fa",
+          appliesTo: "PAGE",
+          styleBlockIds: [],
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -18331,6 +18259,78 @@ Webflow.require("ix2").init({
         effectIn: null,
       },
       createdOn: 1718306061141,
+    },
+    "e-108": {
+      id: "e-108",
+      name: "",
+      animationType: "custom",
+      eventTypeId: "DROPDOWN_OPEN",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_START_ACTION",
+        config: {
+          delay: 0,
+          easing: "",
+          duration: 0,
+          actionListId: "a-30",
+          affectedElements: {},
+          playInReverse: false,
+          autoStopEventId: "e-109",
+        },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        selector: ".dropdown-wrapper",
+        originalId: "b5b93e15-6be4-1a75-7312-7fa51171e014",
+        appliesTo: "CLASS",
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: null,
+        scrollOffsetUnit: null,
+        delay: null,
+        direction: null,
+        effectIn: null,
+      },
+      createdOn: 1718375145032,
+    },
+    "e-109": {
+      id: "e-109",
+      name: "",
+      animationType: "custom",
+      eventTypeId: "DROPDOWN_CLOSE",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_START_ACTION",
+        config: {
+          delay: 0,
+          easing: "",
+          duration: 0,
+          actionListId: "a-9",
+          affectedElements: {},
+          playInReverse: false,
+          autoStopEventId: "e-108",
+        },
+      },
+      mediaQueries: ["main", "medium", "small", "tiny"],
+      target: {
+        selector: ".dropdown-wrapper",
+        originalId: "b5b93e15-6be4-1a75-7312-7fa51171e014",
+        appliesTo: "CLASS",
+      },
+      targets: [],
+      config: {
+        loop: false,
+        playInReverse: false,
+        scrollOffsetValue: null,
+        scrollOffsetUnit: null,
+        delay: 0,
+        direction: "LEFT",
+        effectIn: true,
+      },
+      createdOn: 1718375145037,
     },
   },
   actionLists: {
@@ -19910,6 +19910,62 @@ Webflow.require("ix2").init({
       useFirstGroupAsInitialState: true,
       createdOn: 1717594756665,
     },
+    "a-32": {
+      id: "a-32",
+      title: "Testimonial fade in",
+      continuousParameterGroups: [
+        {
+          id: "a-32-p",
+          type: "SCROLL_PROGRESS",
+          parameterLabel: "Scroll",
+          continuousActionGroups: [
+            {
+              keyframe: 0,
+              actionItems: [
+                {
+                  id: "a-32-n",
+                  actionTypeId: "STYLE_OPACITY",
+                  config: {
+                    delay: 0,
+                    easing: "inOutQuad",
+                    duration: 500,
+                    target: {
+                      useEventTarget: "CHILDREN",
+                      selector: ".testimonial_txt",
+                      selectorGuids: ["aebedbfa-d14b-d9f9-295c-98e5811a5496"],
+                    },
+                    value: 0,
+                    unit: "",
+                  },
+                },
+              ],
+            },
+            {
+              keyframe: 31,
+              actionItems: [
+                {
+                  id: "a-32-n-2",
+                  actionTypeId: "STYLE_OPACITY",
+                  config: {
+                    delay: 0,
+                    easing: "",
+                    duration: 500,
+                    target: {
+                      useEventTarget: "CHILDREN",
+                      selector: ".testimonial_txt",
+                      selectorGuids: ["aebedbfa-d14b-d9f9-295c-98e5811a5496"],
+                    },
+                    value: 1,
+                    unit: "",
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      createdOn: 1718108825471,
+    },
     "a-30": {
       id: "a-30",
       title: "Nav Dropdown Opens 2",
@@ -20105,162 +20161,6 @@ Webflow.require("ix2").init({
       ],
       useFirstGroupAsInitialState: true,
       createdOn: 1636862239424,
-    },
-    "a-31": {
-      id: "a-31",
-      title: "Nav Dropdown Closes 2",
-      actionItemGroups: [
-        {
-          actionItems: [
-            {
-              id: "a-31-n",
-              actionTypeId: "TRANSFORM_MOVE",
-              config: {
-                delay: 0,
-                easing: "ease",
-                duration: 300,
-                target: {
-                  useEventTarget: "CHILDREN",
-                  selector: ".dropdown-column-wrapper",
-                  selectorGuids: ["c7479ad4-2712-b950-fbd9-896b377730e3"],
-                },
-                yValue: 10,
-                xUnit: "PX",
-                yUnit: "px",
-                zUnit: "PX",
-              },
-            },
-            {
-              id: "a-31-n-2",
-              actionTypeId: "TRANSFORM_ROTATE",
-              config: {
-                delay: 0,
-                easing: "ease",
-                duration: 300,
-                target: {
-                  useEventTarget: "CHILDREN",
-                  selector: ".line-rounded-icon.dropdown-arrow",
-                  selectorGuids: [
-                    "c7479ad4-2712-b950-fbd9-896b377730e4",
-                    "c7479ad4-2712-b950-fbd9-896b377730ea",
-                  ],
-                },
-                zValue: 0,
-                xUnit: "DEG",
-                yUnit: "DEG",
-                zUnit: "deg",
-              },
-            },
-            {
-              id: "a-31-n-3",
-              actionTypeId: "STYLE_SIZE",
-              config: {
-                delay: 0,
-                easing: "ease",
-                duration: 300,
-                target: {
-                  useEventTarget: "CHILDREN",
-                  selector: ".dropdown-column-wrapper",
-                  selectorGuids: ["c7479ad4-2712-b950-fbd9-896b377730e3"],
-                },
-                heightValue: 0,
-                widthUnit: "PX",
-                heightUnit: "px",
-                locked: false,
-              },
-            },
-            {
-              id: "a-31-n-4",
-              actionTypeId: "STYLE_OPACITY",
-              config: {
-                delay: 200,
-                easing: "ease",
-                duration: 300,
-                target: {
-                  useEventTarget: "CHILDREN",
-                  selector: ".dropdown-column-wrapper",
-                  selectorGuids: ["c7479ad4-2712-b950-fbd9-896b377730e3"],
-                },
-                value: 1,
-                unit: "",
-              },
-            },
-            {
-              id: "a-31-n-5",
-              actionTypeId: "GENERAL_DISPLAY",
-              config: {
-                delay: 300,
-                easing: "",
-                duration: 0,
-                target: {
-                  useEventTarget: "CHILDREN",
-                  selector: ".dropdown-column-wrapper",
-                  selectorGuids: ["c7479ad4-2712-b950-fbd9-896b377730e3"],
-                },
-                value: "none",
-              },
-            },
-          ],
-        },
-      ],
-      useFirstGroupAsInitialState: false,
-      createdOn: 1636862654345,
-    },
-    "a-32": {
-      id: "a-32",
-      title: "Testimonial fade in",
-      continuousParameterGroups: [
-        {
-          id: "a-32-p",
-          type: "SCROLL_PROGRESS",
-          parameterLabel: "Scroll",
-          continuousActionGroups: [
-            {
-              keyframe: 0,
-              actionItems: [
-                {
-                  id: "a-32-n",
-                  actionTypeId: "STYLE_OPACITY",
-                  config: {
-                    delay: 0,
-                    easing: "inOutQuad",
-                    duration: 500,
-                    target: {
-                      useEventTarget: "CHILDREN",
-                      selector: ".testimonial_txt",
-                      selectorGuids: ["aebedbfa-d14b-d9f9-295c-98e5811a5496"],
-                    },
-                    value: 0,
-                    unit: "",
-                  },
-                },
-              ],
-            },
-            {
-              keyframe: 31,
-              actionItems: [
-                {
-                  id: "a-32-n-2",
-                  actionTypeId: "STYLE_OPACITY",
-                  config: {
-                    delay: 0,
-                    easing: "",
-                    duration: 500,
-                    target: {
-                      useEventTarget: "CHILDREN",
-                      selector: ".testimonial_txt",
-                      selectorGuids: ["aebedbfa-d14b-d9f9-295c-98e5811a5496"],
-                    },
-                    value: 1,
-                    unit: "",
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      createdOn: 1718108825471,
     },
     fadeIn: {
       id: "fadeIn",
