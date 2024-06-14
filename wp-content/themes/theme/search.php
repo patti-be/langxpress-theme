@@ -4,7 +4,10 @@
 
   <?php if (have_posts()) : ?>
     <div class="padding-global">
-      <div class="search-results">
+      <div class="search-results" style="
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+">
         <h2><?php printf(__('Search Results for: %s', 'sage'), '<span>' . get_search_query() . '</span>'); ?></h2>
 
         <?php while (have_posts()) : the_post(); ?>

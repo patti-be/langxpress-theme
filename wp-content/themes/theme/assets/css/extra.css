@@ -1621,7 +1621,6 @@ textarea.w-select {
   vertical-align: top;
   text-decoration: none;
   color: #222222;
-  padding: 20px;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
@@ -2065,4 +2064,91 @@ html {
 
 .nav_component.scrolled {
   transform: translateY(-8rem); /* Move up when scrolled */
+}
+
+/* CSS to style form elements */
+/* Ensure the container for the form is using flexbox */
+form.wpcf7-form p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+form br {
+  display: none;
+}
+
+/* Style for input containers */
+.wpcf7-form-control-wrap {
+  flex: 1 1 calc(50% - 10px); /* Adjust the width of each input */
+}
+
+/* Ensure the message textarea takes the full width */
+.wpcf7-form-control-wrap[data-name="your-message"] {
+  flex: 1 1 100%;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: black black var(--text-color--text-secondary);
+  color: var(--text-color--text-secondary);
+  background-color: rgba(0, 0, 0, 0);
+  font-family: Kurdis Wide, sans-serif;
+  font-size: 1rem;
+}
+
+.wpcf7 input::placeholder,
+.wpcf7 textarea::placeholder {
+  font-size: 1rem;
+  font-family: Kurdis Wide, sans-serif;
+  color: #e2e8eb; /* Adjust the color as needed */
+}
+.wpcf7 input::focus,
+.wpcf7 textarea::focus {
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: #007bff;
+}
+
+.wpcf7 input[type="submit"] {
+  border: 1px solid var(--base-color-brand--accent-green);
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(../images/form-btn-arrow.svg);
+  background-position: 87%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-radius: 50px;
+  width: 12.5rem;
+  padding: 0.93rem 1.5rem 0.7rem;
+  font-family: Kurdis Regular, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  flex: 1 1 100%;
+  max-width: 200px;
+  align-self: right;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+textarea.wpcf7-form-control {
+  height: 5rem;
+}
+
+.wpcf7-not-valid-tip {
+  color: #dc3232;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: normal;
+  display: block;
+}
+
+.wpcf7-spinner {
+  display: none;
 }

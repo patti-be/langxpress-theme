@@ -304,3 +304,61 @@ class Custom_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
         }
     }
 }
+
+class Custom_Footer_Walker_Nav_Menu extends Walker_Nav_Menu
+{
+    function start_lvl(&$output, $depth = 0, $args = null)
+    {
+        // Do nothing to avoid creating sub-menu wrappers
+    }
+
+    function end_lvl(&$output, $depth = 0, $args = null)
+    {
+        // Do nothing to avoid creating sub-menu wrappers
+    }
+
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
+        if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
+        $indent = ($depth) ? str_repeat($t, $depth) : '';
+
+        // Add footer column opening tag for top-level menu item
+        if ($depth === 0) {
+            $output .= "{$n}{$indent}<div class='footer_col'>{$n}";
+            $output .= "{$indent}\t<div class='footer_line'></div>{$n}";
+            $output .= "{$indent}\t<h3 class='footer_heading'>" . esc_html($item->title) . "</h3>{$n}";
+        } else { // Only output as footer link if it's not the top-level item
+            // Add menu item
+            $classes = empty($item->classes) ? array() : (array) $item->classes;
+            $classes[] = 'footer_link';
+            $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+            $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+            $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
+            $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+            $output .= "{$indent}\t<a{$id}{$class_names} href='" . esc_attr($item->url) . "'>" . esc_html($item->title) . "</a>{$n}";
+        }
+    }
+
+    function end_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
+        if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
+        $indent = ($depth) ? str_repeat($t, $depth) : '';
+
+        // Add footer column closing tag for top-level menu item
+        if ($depth === 0) {
+            $output .= "{$indent}</div>{$n}";
+        }
+    }
+}
