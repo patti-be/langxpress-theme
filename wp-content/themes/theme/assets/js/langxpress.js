@@ -1,11 +1,3 @@
-/*!
- * Webflow: Front-end site library
- * @license MIT
- * Inline scripts may access the api using an async handler:
- *   var Webflow = Webflow || [];
- *   Webflow.push(readyFunction);
- */
-
 (() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
@@ -16459,7 +16451,7 @@ Webflow.require("ix2").init({
         actionTypeId: "GENERAL_CONTINUOUS_ACTION",
         config: { actionListId: "a-3", affectedElements: {}, duration: 0 },
       },
-      mediaQueries: ["main", "medium", "small", "tiny"],
+      mediaQueries: ["main", "medium"],
       target: {
         id: "664b1ad2be6a92018add9893|f8a571b4-343f-a2f3-7faf-a44d1fb7293c",
         appliesTo: "ELEMENT",
@@ -17213,7 +17205,7 @@ Webflow.require("ix2").init({
         actionTypeId: "GENERAL_CONTINUOUS_ACTION",
         config: { actionListId: "a-25", affectedElements: {}, duration: 0 },
       },
-      mediaQueries: ["main", "medium", "small", "tiny"],
+      mediaQueries: ["main", "medium"],
       target: {
         id: "664b1ad2be6a92018add9893|2d2e47ee-52a3-ec03-0e7a-c9872a4a223d",
         appliesTo: "ELEMENT",
@@ -18284,7 +18276,13 @@ Webflow.require("ix2").init({
         originalId: "b5b93e15-6be4-1a75-7312-7fa51171e014",
         appliesTo: "CLASS",
       },
-      targets: [],
+      targets: [
+        {
+          selector: ".dropdown-wrapper",
+          originalId: "b5b93e15-6be4-1a75-7312-7fa51171e014",
+          appliesTo: "CLASS",
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -18320,7 +18318,13 @@ Webflow.require("ix2").init({
         originalId: "b5b93e15-6be4-1a75-7312-7fa51171e014",
         appliesTo: "CLASS",
       },
-      targets: [],
+      targets: [
+        {
+          selector: ".dropdown-wrapper",
+          originalId: "b5b93e15-6be4-1a75-7312-7fa51171e014",
+          appliesTo: "CLASS",
+        },
+      ],
       config: {
         loop: false,
         playInReverse: false,
@@ -18331,6 +18335,37 @@ Webflow.require("ix2").init({
         effectIn: true,
       },
       createdOn: 1718375145037,
+    },
+    "e-110": {
+      id: "e-110",
+      name: "",
+      animationType: "custom",
+      eventTypeId: "SCROLLING_IN_VIEW",
+      action: {
+        id: "",
+        actionTypeId: "GENERAL_CONTINUOUS_ACTION",
+        config: { actionListId: "a-33", affectedElements: {}, duration: 0 },
+      },
+      mediaQueries: ["small", "tiny"],
+      target: {
+        appliesTo: "ELEMENT",
+        styleBlockIds: [],
+        id: "664b1ad2be6a92018add9893|2d2e47ee-52a3-ec03-0e7a-c9872a4a223d",
+      },
+      targets: [],
+      config: [
+        {
+          continuousParameterGroupId: "a-33-p",
+          smoothing: 50,
+          startsEntering: true,
+          addStartOffset: false,
+          addOffsetValue: 50,
+          startsExiting: false,
+          addEndOffset: false,
+          endOffsetValue: 50,
+        },
+      ],
+      createdOn: 1720467894806,
     },
   },
   actionLists: {
@@ -19638,7 +19673,7 @@ Webflow.require("ix2").init({
               ],
             },
             {
-              keyframe: 39,
+              keyframe: 25,
               actionItems: [
                 {
                   id: "a-25-n-2",
@@ -20161,6 +20196,60 @@ Webflow.require("ix2").init({
       ],
       useFirstGroupAsInitialState: true,
       createdOn: 1636862239424,
+    },
+    "a-33": {
+      id: "a-33",
+      title: "Home - intro fade in Mobile",
+      continuousParameterGroups: [
+        {
+          id: "a-33-p",
+          type: "SCROLL_PROGRESS",
+          parameterLabel: "Scroll",
+          continuousActionGroups: [
+            {
+              keyframe: 0,
+              actionItems: [
+                {
+                  id: "a-33-n",
+                  actionTypeId: "STYLE_OPACITY",
+                  config: {
+                    delay: 0,
+                    easing: "",
+                    duration: 500,
+                    target: {
+                      useEventTarget: true,
+                      id: "664b1ad2be6a92018add9893|2d2e47ee-52a3-ec03-0e7a-c9872a4a223d",
+                    },
+                    value: 0,
+                    unit: "",
+                  },
+                },
+              ],
+            },
+            {
+              keyframe: 11,
+              actionItems: [
+                {
+                  id: "a-33-n-2",
+                  actionTypeId: "STYLE_OPACITY",
+                  config: {
+                    delay: 0,
+                    easing: "",
+                    duration: 500,
+                    target: {
+                      useEventTarget: true,
+                      id: "664b1ad2be6a92018add9893|2d2e47ee-52a3-ec03-0e7a-c9872a4a223d",
+                    },
+                    value: 1,
+                    unit: "",
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      createdOn: 1718049178659,
     },
     fadeIn: {
       id: "fadeIn",
