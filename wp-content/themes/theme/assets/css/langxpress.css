@@ -2130,7 +2130,7 @@ figcaption {
   margin-top: 1.37rem;
   margin-bottom: 2.37rem;
   font-family: Kurdis Wide, sans-serif;
-  font-size: 0.93rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.12rem;
 }
@@ -2489,6 +2489,10 @@ figcaption {
 }
 
 @media screen and (max-width: 991px) {
+  .feature-card_img {
+    margin-bottom: 0;
+    height: auto;
+  }
   .padding-xlarge {
     padding: 3rem;
   }
@@ -3256,7 +3260,7 @@ figcaption {
   }
 
   .spacer-xhuge {
-    padding-top: 4rem;
+    padding-top: 0rem;
   }
 
   .spacer-xxhuge {
@@ -3538,8 +3542,8 @@ figcaption {
   }
 
   .feature-card-_inner {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .share_divider {

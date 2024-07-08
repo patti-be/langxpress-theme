@@ -70,6 +70,28 @@ $(document).ready(function () {
 })(document);
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Select all elements with the class 'nav-mobile_link'
+  var navMobileLinks = document.querySelectorAll(".nav-mobile_link");
+
+  navMobileLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      // Check if the inner text of the clicked element is "Contact"
+      if (event.target.innerText.trim().toLowerCase() === "contact") {
+        // Select the element with the class 'nav-mobile'
+        var navMobile = document.querySelector(".nav-mobile");
+        if (navMobile) {
+          // Set the display style to 'none'
+          navMobile.style.display = "none";
+        }
+
+        // Select the body element and set overflow to 'auto'
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   var searchIcon = document.querySelector(".search-icon");
   var searchForm = document.querySelector(".search-form");
 

@@ -654,6 +654,16 @@ textarea.w-select {
   }
 }
 @media screen and (max-width: 767px) {
+  .feature-card_txt {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  .blog-card_text {
+    font-size: 1.2rem;
+  }
+  .footer_link {
+    font-size: 1.4rem;
+  }
   .w-hidden-main {
     display: inherit !important;
   }
@@ -1139,7 +1149,6 @@ textarea.w-select {
 .w-dropdown-link {
   padding: 10px 20px;
   display: block;
-  color: #222222;
 }
 .w-dropdown-link.w--current {
   color: #0082f3;
@@ -1620,14 +1629,11 @@ textarea.w-select {
   display: inline-block;
   vertical-align: top;
   text-decoration: none;
-  color: #222222;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
 }
-.w-nav-link.w--current {
-  color: #0082f3;
-}
+
 .w-nav-menu {
   position: relative;
   float: right;
@@ -2066,6 +2072,14 @@ html {
   transform: translateY(-8rem); /* Move up when scrolled */
   color: #161a1c;
 }
+.nav_component.scrolled {
+  transform: translateY(-8rem); /* Move up when scrolled */
+  color: #161a1c;
+}
+.nav_component.scrolled .nav-desktop-btn_middle.is-home,
+.nav_component.scrolled .nav-desktop_btn_bottom.is-home {
+  background-color: #283346;
+}
 
 /* CSS to style form elements */
 /* Ensure the container for the form is using flexbox */
@@ -2161,6 +2175,11 @@ textarea.wpcf7-form-control {
 .blog-card_inner.is-blog {
   display: flex;
   flex-direction: column;
+}
+.feature-card-_inner div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 .image-hero_txt p {
