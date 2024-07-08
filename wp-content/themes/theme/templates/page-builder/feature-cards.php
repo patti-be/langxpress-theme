@@ -24,6 +24,7 @@
                              <div>
                                  <?php
                                     $image = get_sub_field('image');
+                                    $button_link = get_sub_field('button_link');
                                     ?>
                                  <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="feature-card_img">
                                  <h3 style="text-align: center;"><?php the_sub_field('heading'); ?></h3>

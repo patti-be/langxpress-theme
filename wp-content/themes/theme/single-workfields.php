@@ -98,47 +98,80 @@
 
 
     <!-- SECTION TESTIMONIALS -->
-
     <div class="section_testimonial">
         <div class="padding-global">
             <?php if (have_rows('testimonials')) : ?>
                 <?php while (have_rows('testimonials')) : the_row(); ?>
                     <?php
-                    // Get field values
+                    // Get the heading field outside the repeater loop
                     $heading = get_sub_field('heading');
-                    $review = get_sub_field('review');
-                    $company_name = get_sub_field('company_name');
-                    $review_second = get_sub_field('review_second');
-                    $company_second = get_sub_field('company_second');
-                    $first_image = get_sub_field('first_image');
-                    $second_image = get_sub_field('second_image');
                     ?>
                     <h2 class="heading-page clip-text left"><?php echo esc_html($heading); ?></h2>
-                    <div class="testimonial">
-                        <div class="testimonial_text-block">
-                            <p class="testimonial_txt"><?php echo esc_html($review); ?></p>
-                            <div class="testimonial_client-name"><?php echo esc_html($company_name); ?></div>
-                        </div>
-                        <div class="testimonial_block-right">
-                            <div class="testimonial_text-block is-right">
-                                <p class="testimonial_txt fade-in"><?php echo esc_html($review_second); ?></p>
-                                <div class="testimonial_client-name"><?php echo esc_html($company_second); ?></div>
-                            </div>
-                        </div>
-                        <div class="testimonial_images">
-                            <div class="testimonial_images_col1">
-                                <div class="testimonial_image1"><img src="<?php echo esc_url($first_image['url']); ?>" alt="<?php echo esc_attr($first_image['alt']); ?>"></div>
-                            </div>
-                            <div class="testimonial_images_col2">
-                                <div class="testimonial_image2"><img src="<?php echo esc_url($second_image['url']); ?>" alt="<?php echo esc_attr($second_image['alt']); ?>"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php if (have_rows('testimonial')) : ?>
+                        <?php while (have_rows('testimonial')) : the_row(); ?>
+                            <?php
+                            // Get field values within the repeater
+                            $review = get_sub_field('review');
+                            $company_name = get_sub_field('company_name');
+                            $first_image = get_sub_field('first_image');
+                            $second_image = get_sub_field('second_image');
+                            $alignment = get_sub_field('alignment');
+                            ?>
+
+                            <?php if ($alignment == 'left') : ?>
+                                <div class="testimonial">
+                                    <div class="testimonial_text-block">
+                                        <p class="testimonial_txt"><?php echo esc_html($review); ?></p>
+                                        <div class="testimonial_client-name"><?php echo esc_html($company_name); ?></div>
+                                    </div>
+                                    <?php if ($first_image || $second_image) : ?>
+                                        <div class="testimonial_images">
+                                            <?php if ($first_image) : ?>
+                                                <div class="testimonial_images_col1">
+                                                    <div class="testimonial_image1"><img src="<?php echo esc_url($first_image['url']); ?>" alt="<?php echo esc_attr($first_image['alt']); ?>"></div>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($second_image) : ?>
+                                                <div class="testimonial_images_col2">
+                                                    <div class="testimonial_image2"><img src="<?php echo esc_url($second_image['url']); ?>" alt="<?php echo esc_attr($second_image['alt']); ?>"></div>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php elseif ($alignment == 'right') : ?>
+                                <div class="testimonial">
+                                    <div class="testimonial_block-right">
+                                        <div class="testimonial_text-block is-right">
+                                            <p class="testimonial_txt fade-in"><?php echo esc_html($review); ?></p>
+                                            <div class="testimonial_client-name"><?php echo esc_html($company_name); ?></div>
+                                        </div>
+                                    </div>
+                                    <?php if ($first_image || $second_image) : ?>
+                                        <div class="testimonial_images">
+                                            <?php if ($first_image) : ?>
+                                                <div class="testimonial_images_col1">
+                                                    <div class="testimonial_image1"><img src="<?php echo esc_url($first_image['url']); ?>" alt="<?php echo esc_attr($first_image['alt']); ?>"></div>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($second_image) : ?>
+                                                <div class="testimonial_images_col2">
+                                                    <div class="testimonial_image2"><img src="<?php echo esc_url($second_image['url']); ?>" alt="<?php echo esc_attr($second_image['alt']); ?>"></div>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                     <div class="spacer-xhuge"></div>
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>
     </div>
+
+
     <div class="line-divider">
         <div class="padding-global">
             <div class="container-large">

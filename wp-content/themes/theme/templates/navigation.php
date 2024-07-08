@@ -15,7 +15,8 @@
         <div data-w-id="314745c6-8dab-e94a-9d7e-6d6ea6cdbedd" data-animation="over-right" data-collapse="medium" data-duration="400" data-easing="ease-in-cubic" data-easing2="ease" role="banner" class="nav_component is-home w-nav">
             <div class="padding-global">
                 <div class="nav-desktop is-home">
-                    <a href="#" class="nav_brand is-home w-nav-brand">
+                    <a data-w-id="06f0079b-df41-7989-8e84-3018b54c1a9c" href="#" class="nav_brand is-home w-nav-brand">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/Group.svg" alt="" class="nav_logo">
                     </a>
                     <nav role="navigation" class="nav_menu w-nav-menu">
                         <?php

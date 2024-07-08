@@ -40,6 +40,13 @@
                     ?> </div>
             </div>
         </div>
+        <div class="line-divider">
+            <div class="padding-global section_text-intro">
+                <div class="container-large">
+                    <div class="line-divider_inner"></div>
+                </div>
+            </div>
+        </div>
         <div class="section_blog">
             <div class="padding-global">
                 <div class="blog-post">

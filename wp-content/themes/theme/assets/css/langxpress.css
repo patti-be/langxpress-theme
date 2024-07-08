@@ -1777,6 +1777,8 @@ figcaption {
 
 .blog-card_text {
   margin-top: 1rem;
+  font-family: Kurdis Wide, sans-serif;
+  font-size: 1rem;
 }
 
 .footer {
@@ -1822,6 +1824,10 @@ figcaption {
   font-family: Kurdis Wide, sans-serif;
   font-size: 1rem;
   text-decoration: none;
+  line-height: 1.5;
+}
+.footer_link:hover {
+  color: white;
 }
 
 .footer_line {
@@ -1969,7 +1975,7 @@ figcaption {
   justify-content: center;
   align-items: flex-start;
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .text-color-heading {
@@ -2010,7 +2016,8 @@ figcaption {
 }
 
 .blog-post_content p {
-  font-size: 1.625rem;
+  font-size: 1.2rem;
+  line-height: 2;
 }
 
 .section_share {
@@ -2471,7 +2478,7 @@ figcaption {
 }
 
 .btn_text {
-  padding-top: 4px;
+  padding-top: 2px;
   line-height: 1;
 }
 

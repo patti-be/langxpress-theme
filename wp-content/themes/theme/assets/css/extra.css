@@ -2064,6 +2064,7 @@ html {
 
 .nav_component.scrolled {
   transform: translateY(-8rem); /* Move up when scrolled */
+  color: #161a1c;
 }
 
 /* CSS to style form elements */
@@ -2160,4 +2161,8 @@ textarea.wpcf7-form-control {
 .blog-card_inner.is-blog {
   display: flex;
   flex-direction: column;
+}
+
+.image-hero_txt p {
+  font-size: 1.7rem;
 }
